@@ -1,5 +1,5 @@
 {
-    "name": "mac/xhprof",
+    "name": "bodyTop-dev/xhprof",
     "description": "调试程序，发现性能瓶颈",
     "type": "library",
     "require": {
