@@ -1,0 +1,20 @@
+{
+    "name": "mac/xhprof",
+    "description": "调试程序，发现性能瓶颈",
+    "type": "library",
+    "require": {
+        "php": "^7.1"
+    },
+    "authors": [
+        {
+            "name": "郭家豪",
+            "email": "guojiahao@wanxiangspace.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Guanguans\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
