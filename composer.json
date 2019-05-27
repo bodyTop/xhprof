@@ -4,17 +4,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "郭家豪",
-            "email": "13835610017@163.com"
+            "name": "bodyTop",
+            "email": "572233013@qq.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.4"
-    },
     "autoload": {
         "psr-4": {
-            "Xhprof\\dev\\": "src/Xhprof/dev"
+            "bodyTop\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "require": {}
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Xhprof\dev;
+namespace bodyTop;
 class Xhprof{
 
     public function begin(){
@@ -11,12 +11,12 @@ class Xhprof{
         // display raw xhprof data for the profiler run
         $XHPROF_ROOT = realpath(dirname(__FILE__));
 
-        include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_lib.php";
-        include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_runs.php";
+        include_once $XHPROF_ROOT . "../../xhprof_lib/utils/xhprof_lib.php";
+        include_once $XHPROF_ROOT . "../../xhprof_lib/utils/xhprof_runs.php";
 
         // save raw data for this profiler run using default
         // implementation of iXHProfRuns.
-        $xhprof_runs = new XHProfRuns_Default();
+        $xhprof_runs = new \XHProfRuns_Default();
 
         // save the run under a namespace "xhprof_foo"
         $run_id = $xhprof_runs->save_run($xhprof_data, "xhprof_foo");
@@ -34,13 +34,3 @@ class Xhprof{
 
     }
 }
-
-$xhprof = new Xhprof();
-$xhprof->begin();
-$array = array();
-for ($n = 0; $n<5000000; $n++){
-    $array[] = mt_rand(1,999999);
-}
-sleep(1);
-
-print_r($xhprof->end());
