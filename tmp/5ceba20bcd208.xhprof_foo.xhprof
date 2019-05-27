@@ -1,0 +1,1 @@
+a:5:{s:16:"main()==>mt_rand";a:2:{s:2:"ct";i:5000000;s:2:"wt";i:599753704;}s:14:"main()==>sleep";a:2:{s:2:"ct";i:1;s:2:"wt";i:1001172875;}s:28:"Xhprof::end==>xhprof_disable";a:2:{s:2:"ct";i:1;s:2:"wt";i:477;}s:20:"main()==>Xhprof::end";a:2:{s:2:"ct";i:1;s:2:"wt";i:16672;}s:6:"main()";a:2:{s:2:"ct";i:1;s:2:"wt";i:8334381714;}}

@@ -1,4 +1,5 @@
 <?php
+namespace Xhprof\dev;
 class Xhprof{
 
     public function begin(){
@@ -7,11 +8,11 @@ class Xhprof{
 
     public function end(){
         $xhprof_data = xhprof_disable();
-
         // display raw xhprof data for the profiler run
         $XHPROF_ROOT = realpath(dirname(__FILE__));
-        include_once $XHPROF_ROOT . "../xhprof_lib/utils/xhprof_lib.php";
-        include_once $XHPROF_ROOT . "../xhprof_lib/utils/xhprof_runs.php";
+
+        include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_lib.php";
+        include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_runs.php";
 
         // save raw data for this profiler run using default
         // implementation of iXHProfRuns.
@@ -19,7 +20,8 @@ class Xhprof{
 
         // save the run under a namespace "xhprof_foo"
         $run_id = $xhprof_runs->save_run($xhprof_data, "xhprof_foo");
-        $str = $_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']).'/'.basename(dirname(__FILE__),'/').'/xhprof_html';
+        //dirname($_SERVER['SCRIPT_NAME']).'/'.basename(dirname(__FILE__),'/').
+        $str = $_SERVER['HTTP_HOST'].'/xhprof_html';
 
         $text = "---------------\n".
             "Assuming you have set up the http based UI for \n".
@@ -33,4 +35,12 @@ class Xhprof{
     }
 }
 
+$xhprof = new Xhprof();
+$xhprof->begin();
+$array = array();
+for ($n = 0; $n<5000000; $n++){
+    $array[] = mt_rand(1,999999);
+}
+sleep(1);
 
+print_r($xhprof->end());

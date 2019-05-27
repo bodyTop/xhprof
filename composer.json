@@ -1,20 +1,20 @@
 {
-    "name": "body-top-dev/xhprof",
-    "description": "调试程序，发现性能瓶颈",
+    "name": "bodytop/xhprof",
     "type": "library",
-    "require": {
-        "php": "^7.1"
-    },
+    "license": "MIT",
     "authors": [
         {
             "name": "郭家豪",
-            "email": "guojiahao@wanxiangspace.com"
+            "email": "13835610017@163.com"
         }
     ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4"
+    },
     "autoload": {
         "psr-4": {
-            "Guanguans\\": "src/"
+            "Xhprof\\dev\\": "src/Xhprof/dev"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
